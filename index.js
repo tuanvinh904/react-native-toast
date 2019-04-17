@@ -1,15 +1,12 @@
 'use strict';
 
-const ReactNative = require('react-native');
-const {
-    NativeModules,
-} = ReactNative;
+import { NativeModules } from 'react-native'
 
 const RCTToast = NativeModules.Toast;
 const Toast = {};
 
 const optionsBuilder = function () {
-  // defaults
+    // defaults
     let message = null;
     let duration = 'short';
     let position = 'center';
@@ -53,12 +50,12 @@ const showWithOptions = function (options) {
 
 const showToast = function (message, duration, position) {
     showWithOptions(
-      optionsBuilder()
-          .withMessage(message || '未知数据')
-          .withDuration(duration)
-          .withPosition(position)
-          .build()
-      );
+        optionsBuilder()
+            .withMessage(message || 'Thông báo')
+            .withDuration(duration)
+            .withPosition(position)
+            .build()
+    );
 };
 
 Toast.showShortTop = function (message) {
